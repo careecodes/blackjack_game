@@ -26,3 +26,8 @@
 h1 {
     font-family: 'Bangers', cursive;
 }
+
+img {
+    height: 100px;
+    margin: 5px;
+}
