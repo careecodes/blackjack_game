@@ -7,43 +7,47 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Create a new card image element for dealer
     const mySuit = "clubs";
-    const newCard = document.createElement('img');
-    newCard.src = `images/2_of_${mySuit}.png`;
+    const dealerCard = document.createElement('img');
+    dealerCard.src = `images/2_of_${mySuit}.png`;
 
     // Create new card image element for player
     const playerCard = document.createElement('img');
     playerCard.src = "images/4_of_diamonds.png";
 
     // Append the new card image element to the dealer hand div
-    const dealerHand = document.querySelector("#dealer-hand");
-    dealerHand.appendChild(newCard);
+    const dealerHandDiv = document.querySelector("#dealer-hand");
+    dealerHandDiv.appendChild(dealerCard);
 
     // Append the player card to the player hand div
-    const playerHand = document.querySelector("#player-hand");
-    playerHand.appendChild(playerCard);
+    const playerHandDiv = document.querySelector("#player-hand");
+    playerHandDiv.appendChild(playerCard);
   });
 
+  // Build deck of cards
+  function buildDeck() {
+	
+    const suits = [
+      "clubs",
+      "diamonds", 
+      "hearts",
+      "spades"
+    ];
+    
+    let myDeck = [];
+    // loop through each of the 4 suits...
+    for(s=0; s<suits.length; s++) {
+      // loop through rank 1-13
+      for(r=1; r<=13; r++){
+        myDeck.push(
+          {rank: r,
+          suit: suits[s]}
+        );
+      }
+    }
+    return myDeck;
+  }
 
-  let myDeck = [];
-
-const suits = [
-	"clubs",
-	"diamonds", 
-	"hearts",
-	"spades"
-];
-
-// loop through each of the 4 suits...
-for(s=0; s<suits.length; s++) {
-	// loop through rank 1-13
-	for(r=1; r<=13; r++){
-	myDeck.push(
-		{rank: r,
-		suit: suits[s]}
-	);
-	}
-}
-
-console.log(myDeck);
-console.log("total number of cards: " + myDeck.length);
+  let dealerHand = [];
+  let playerHand = [];
+ 
 })
