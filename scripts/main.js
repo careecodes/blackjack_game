@@ -5,22 +5,41 @@ window.addEventListener('DOMContentLoaded', function() {
   dealBtn.addEventListener('click', function(){
     console.log("you've pressed the deal button");
 
+    // ****  Deal the hand ****
+    drawCard(playerHand);
+    drawCard(dealerHand);
+    drawCard(playerHand);
+    drawCard(dealerHand);
+
+    console.log(playerHand[0]);
+    console.log(playerHand[0].rank);
+    console.log(playerHand[0].suit);
+
+    // I need to be able to build a string 
+    // with 2 unique values in it: rank and suit
+    // 
+    // "images/[rank]_of_[suit].png"
+    //
+
+    console.log(playerHand[0]);
+    console.log(`images/${playerHand[0].rank}_of_${playerHand[0].suit}.png`);
+    
     // Create a new card image element for dealer
-    const mySuit = "clubs";
-    const dealerCard = document.createElement('img');
-    dealerCard.src = `images/2_of_${mySuit}.png`;
+    // const mySuit = "clubs";
+    // const dealerCard = document.createElement('img');
+    // dealerCard.src = `images/2_of_${mySuit}.png`;
 
     // Create new card image element for player
-    const playerCard = document.createElement('img');
-    playerCard.src = "images/4_of_diamonds.png";
+    // const playerCard = document.createElement('img');
+    // playerCard.src = "images/4_of_diamonds.png";
 
     // Append the new card image element to the dealer hand div
-    const dealerHandDiv = document.querySelector("#dealer-hand");
-    dealerHandDiv.appendChild(dealerCard);
+    // const dealerHandDiv = document.querySelector("#dealer-hand");
+    // dealerHandDiv.appendChild(dealerCard);
 
     // Append the player card to the player hand div
-    const playerHandDiv = document.querySelector("#player-hand");
-    playerHandDiv.appendChild(playerCard);
+    // const playerHandDiv = document.querySelector("#player-hand");
+    // playerHandDiv.appendChild(playerCard);
   });
 
   // Build deck of cards
@@ -58,31 +77,5 @@ window.addEventListener('DOMContentLoaded', function() {
     nextHand.push(drawnCard);
     console.log(nextHand);
   }
-
-  // ****  Deal the hand ****
-  // Push the deal button
-
-  // Card dealt to player
-  // * Draw a card from the deck
-  drawCard(playerHand);
-  // * Deal it to the player -- add to player's hand
-
-  // Card dealt to dealer
-  // * Draw a card from the deck
-  drawCard(dealerHand);
-  // * Deal it to the dealer -- add to dealer's hand
-
-  // Card dealt to player
-  // * Draw a card from the deck
-  drawCard(playerHand);
-  // * Deal it to the player -- add to player's hand
-
-  // Card dealt to dealer
-  // * Draw a card from the deck
-  drawCard(dealerHand);
-  // * Deal it to the dealer -- add to dealer's hand
-
-
-
  
 })
