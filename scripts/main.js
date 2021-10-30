@@ -46,8 +46,43 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     return myDeck;
   }
+  
+  let myDeck = buildDeck();
 
   let dealerHand = [];
   let playerHand = [];
+
+  function drawCard(nextHand){
+    console.log("you have drawn a card");
+    let drawnCard = myDeck.pop();
+    nextHand.push(drawnCard);
+    console.log(nextHand);
+  }
+
+  // ****  Deal the hand ****
+  // Push the deal button
+
+  // Card dealt to player
+  // * Draw a card from the deck
+  drawCard(playerHand);
+  // * Deal it to the player -- add to player's hand
+
+  // Card dealt to dealer
+  // * Draw a card from the deck
+  drawCard(dealerHand);
+  // * Deal it to the dealer -- add to dealer's hand
+
+  // Card dealt to player
+  // * Draw a card from the deck
+  drawCard(playerHand);
+  // * Deal it to the player -- add to player's hand
+
+  // Card dealt to dealer
+  // * Draw a card from the deck
+  drawCard(dealerHand);
+  // * Deal it to the dealer -- add to dealer's hand
+
+
+
  
 })
